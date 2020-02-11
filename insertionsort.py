@@ -1,21 +1,27 @@
 import pygame
 from main import *
 import time
-
-pygame.init()
-MAX = 300
-screen = pygame.display.set_mode((MAX,MAX))
-blue = (0, 0, 255)
+screen = None
+def init(arr):
+    global screen
+    global pad
+    global MAX
+    pad = 15
+    MAX = len(arr) * (10+pad)
+    screen = pygame.display.set_mode((MAX,MAX))
 
 def visualize(arr):
+    
+    blue = (0, 0, 255)
     x = 0
     y = 0
     for a in arr:
         pygame.draw.rect(screen, blue, (x,y,10,a*10))
-        x += 15
+        x += pad
     return 3
 
 def sort(s):
+    pygame.init()
     for i in range(len(s)):
         curr = s[i]
         j = i-1
