@@ -22,6 +22,7 @@ def visualize(arr):
 
 def sort(s):
     pygame.init()
+    times = 0
     for i in range(len(s)):
         curr = s[i]
         j = i-1
@@ -29,9 +30,13 @@ def sort(s):
             s[j+1] = s[j]
             j -= 1
             print(s)
+            times += 1
         s[j+1] = curr
         screen.fill((0, 0, 0))
         visualize(s)
         pygame.display.update()
+        times += 1
         time.sleep(1)
+    print("Times gone through: ", times)
+    print(len(s))
     return s
