@@ -1,4 +1,4 @@
 # SortingAlgoVisualize
 Visualize Sorting Algorithms (written in python)
 
-at the mmt it only has insertion sort
+bogosort and insertion sort are here
